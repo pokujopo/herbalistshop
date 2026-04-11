@@ -5,7 +5,7 @@ function AdminDashboard() {
     const token = localStorage.getItem("token");
 
     try {
-      await fetch("http://127.0.0.1:8000/api/logout", {
+      await fetch("https://adamherbalistapi-main-ihdtg6.free.laravel.cloud//api/logout", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -87,7 +87,7 @@ function AdminDashboard() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://127.0.0.1:8000/api/products", {
+      const res = await fetch("https://adamherbalistapi-main-ihdtg6.free.laravel.cloud/api/products", {
         method: "POST",
         headers: {
           Accept: "application/json",
