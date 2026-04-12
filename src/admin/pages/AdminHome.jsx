@@ -212,8 +212,8 @@ function AdminHome() {
             <div className="flex flex-wrap gap-2">
               <PeriodButton label="Daily" value="daily" active={period === "daily"} onClick={setPeriod} />
               <PeriodButton label="Weekly" value="weekly" active={period === "weekly"} onClick={setPeriod} />
-              <PeriodButton label="Monthly" value="monthly" active={period === "monthly"} onClick={setPeriod} />
-              <PeriodButton label="Yearly" value="yearly" active={period === "yearly"} onClick={setPeriod} />
+          {/* <PeriodButton label="Monthly" value="monthly" active={period === "monthly"} onClick={setPeriod} />
+              <PeriodButton label="Yearly" value="yearly" active={period === "yearly"} onClick={setPeriod} />*/}
             </div>
           </div>
 
