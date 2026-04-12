@@ -20,7 +20,7 @@ function ProductDetail() {
       setLoading(true);
 
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/products/${slug}`
+        `https://adamherbalistapi-main-ihdtg6.free.laravel.cloud/api/products/${slug}`
       );
 
       setProduct(res.data.product);
