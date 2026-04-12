@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import img1 from "../assets/natural-remedies-1315042436-1024x577.jpg"
 import img2 from "../assets/fangasi-za-za-ukeni2.png"
-import img3 from "../src/assets/1-7.jpg"
+import img3 from "../assets/1-7.jpg"
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 function Banner() {
