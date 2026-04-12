@@ -3,6 +3,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import img1 from "../assets/natural-remedies-1315042436-1024x577.jpg"
+import img2 from "../assets/fangasi-za-za-ukeni2.png"
+import img3 from "../src/assets/1-7.jpg"
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 function Banner() {
@@ -26,7 +28,7 @@ function Banner() {
         <div className="relative w-full h-full">
           <img
             className="w-full h-full object-cover"
-            src="../src/assets/1-7.jpg"
+            src={img3}
             alt="Dawa za asili"
           />
 
@@ -88,7 +90,7 @@ function Banner() {
         <div className="relative w-full h-full">
           <img
             className="w-full h-full object-cover"
-            src="../src/assets/fangasi-za-za-ukeni2.png"
+            src={img2}
             alt="Afya ya Wanawake"
           />
 
