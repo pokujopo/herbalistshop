@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import img1 from "../src/assets/natural-remedies-1315042436-1024x577.jpg"
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 function Banner() {
@@ -59,7 +60,7 @@ function Banner() {
         <div className="relative w-full h-full">
           <img
             className="w-full h-full object-cover"
-            src="../src/assets/natural-remedies-1315042436-1024x577.jpg"
+            src={img1}
             alt="Afya ya Mwili"
           />
 
