@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Auth() {
   const navigate = useNavigate();
 
-  const API_BASE = "https://adamherbalistapi-main-ihdtg6.free.laravel.cloud/api";
+  const API_BASE = "https://herbalistshop-api-production.up.railway.app//api";
 
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
