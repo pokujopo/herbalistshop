@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://adamherbalistapi-main-ihdtg6.free.laravel.cloud/api",
+  baseURL: "https://herbalistshop-api-production.up.railway.app/api",
   headers: {
     Accept: "application/json",
   },
