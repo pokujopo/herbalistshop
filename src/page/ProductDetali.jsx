@@ -20,7 +20,7 @@ function ProductDetail() {
       setLoading(true);
 
       const res = await axios.get(
-        `https://adamherbalistapi-main-ihdtg6.free.laravel.cloud/api/products/${slug}`
+        `https://herbalistshop-api-production.up.railway.app/api/products/${slug}`
       );
 
       setProduct(res.data.product);
