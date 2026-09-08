@@ -5,7 +5,7 @@ function AdminCreateProduct() {
     const token = localStorage.getItem("token");
 
     try {
-      await fetch("https://adamherbalistapi-main-ihdtg6.free.laravel.cloud/api/logout", {
+      await fetch("https://herbalistshop-api-production.up.railway.app/api/logout", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -112,7 +112,7 @@ function AdminCreateProduct() {
     try {
       setLoading(true);
 
-      const res = await fetch("https://adamherbalistapi-main-ihdtg6.free.laravel.cloud/api/products", {
+      const res = await fetch("https://herbalistshop-api-production.up.railway.app/api/products", {
         method: "POST",
         headers: {
           Accept: "application/json",
