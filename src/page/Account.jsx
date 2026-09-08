@@ -21,7 +21,7 @@ function Account() {
     const token = localStorage.getItem("token");
 
     try {
-      await fetch("https://adamherbalistapi-main-ihdtg6.free.laravel.cloud/api/logout", {
+      await fetch("https://herbalistshop-api-production.up.railway.app/api/logout", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
