@@ -61,33 +61,65 @@ function Checkout() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!cart || !cart.items || cart.items.length === 0) {
-      alert("Cart yako ipo tupu.");
+  if (!cart || !cart.items || cart.items.length === 0) {
+    alert("Cart yako ipo tupu.");
+    return;
+  }
+
+  try {
+    setSubmitting(true);
+
+    const res = await api.post("/checkout/pay", form);
+
+    const data = res.data;
+
+    console.log("Checkout response:", data);
+
+    /*
+     * ================================
+     * PALMPESA PAYMENT
+     * ================================
+     *
+     * Backend ikifanikiwa kuanzisha PalmPesa
+     * itarudisha checkout_url.
+     */
+    if (
+      (form.payment_method === "mpesa" ||
+        form.payment_method === "mixx") &&
+      data.checkout_url
+    ) {
+      window.location.href = data.checkout_url;
       return;
     }
 
-    try {
-      setSubmitting(true);
+    /*
+     * ================================
+     * NORMAL ORDER / CASH
+     * ================================
+     */
+    alert(data.message || "Order placed successfully");
 
-      const res = await api.post("/checkout/pay", form);
-
-      const data = res.data;
-      console.log("Checkout response:", data);
-
-      alert(data.message || "Order placed successfully");
-
-      if (data.order_number) {
-        navigate(`/track-order/${data.order_number}`);
-      }
-    } catch (err) {
-      console.log(err.response?.data || err);
-      alert(err.response?.data?.message || "Checkout failed");
-    } finally {
-      setSubmitting(false);
+    if (data.order_number) {
+      navigate(`/track-order/${data.order_number}`);
     }
-  };
+
+  } catch (err) {
+    console.error(
+      "Checkout error:",
+      err.response?.data || err
+    );
+
+    alert(
+      err.response?.data?.message ||
+      "Checkout failed"
+    );
+
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   if (loadingCart) {
     return <p className="text-center py-10 mt-20">Loading checkout...</p>;
